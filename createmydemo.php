@@ -43,8 +43,9 @@ if(isset($_POST['add_sub_domain'])){
 			$username_db = $decoded['results'][0]['randompassword']['username'];
 			$password_db = $decoded['results'][0]['randompassword']['password'];
 			
+			$subdomain = "`".str_replace("`","``",$subdomain)."`";
+			$trial = $db->query("CREATE DATABASE IF NOT EXISTS $subdomain");;
 
-			$trial = $dbtwo->query("CREATE DATABASE '$subdomain'");
 			print_r($trial);	
 
 
