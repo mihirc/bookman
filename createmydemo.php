@@ -30,7 +30,7 @@ if(isset($_POST['add_sub_domain'])){
 
 	if(!$error){
 
-		$checkavailability = $db->get_var(SELECT COUNT(*) FROM gzbm_clients_subdomains WHERE qzbmc_subdomain="$subdomain");
+		$checkavailability = $db->get_var("SELECT COUNT(*) FROM gzbm_clients_subdomains WHERE qzbmc_subdomain='$subdomain'");
 		if($checkavailability == 0){
 			$insert = $db->query("INSERT INTO qzbm_clients_subdomains VALUES ('','','$username','$password','$subdomain','$today','1')");
 			if($insert){
