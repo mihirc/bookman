@@ -44,10 +44,7 @@ if(isset($_POST['add_sub_domain'])){
 			$username_db = $decoded['results'][0]['randompassword']['username'];
 			$password_db = $decoded['results'][0]['randompassword']['password'];
 			
-			$subdomain = "`".str_replace("`","``",$subdomain)."`";
-			$trial = $db->query("CREATE DATABASE IF NOT EXISTS $subdomain");;
-
-			print_r($trial);	
+			$trial = SubDomainCreate($subdomain,$username_db,$password_db);	
 
 
 			$insert = $db->query("INSERT INTO qzbm_clients_subdomains VALUES ('','','$username','$password','$subdomain','','$today','1','$username_db','$password_db')");
