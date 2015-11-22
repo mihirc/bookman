@@ -1,13 +1,11 @@
 <?php
-
-define("_BOOK_INIT",true);
-
-
+define("_BOOKMAN_INIT",true);
+require_once("private/conn.php");
 
 ?>
 
 
-<<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
 	<title>Create my Demo || BookMan</title>
