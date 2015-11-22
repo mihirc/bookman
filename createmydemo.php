@@ -1,6 +1,6 @@
 <?php
 
-
+define("_BOOK_INIT",true);
 
 
 
