@@ -2,14 +2,10 @@
 define("_BOOKMAN_INIT",true);
 require_once("private/conn.php");
 
-
-
-
 //require_once("definitions.php");
 date_default_timezone_set("Asia/Calcutta");
 $today = date("Y-m-d");
 if(isset($_POST['add_sub_domain'])){
-	
 	$error = '';
 
 	//SANITIZATION OF STRINGS
@@ -21,19 +17,19 @@ if(isset($_POST['add_sub_domain'])){
 
 	//VALIDATION
 	if($username == ""){
-		$error .= "Please enter a valid username";
+		$error .= "Please enter a valid username<br />";
 	}
 
 	if($password == ''){
-		$error .= "Please enter a valid password";
+		$error .= "Please enter a valid password<br />";
 	}
 
 	if($subdomain == ''){
-		$error .= 'Please enter a subdomain';
+		$error .= 'Please enter a subdomain<br />';
 	}
 
 	if($email == ''){
-		$error .='Please enter a valid email id';
+		$error .='Please enter a valid email id<br />';
 	}
 
 	if(!$error){
@@ -50,7 +46,7 @@ if(isset($_POST['add_sub_domain'])){
 
 			$insert = $db->query("INSERT INTO qzbm_clients_subdomains VALUES ('','','$username','$password','$subdomain','','$today','1','$username_db','$password_db')");
 			if($insert){
-			echo 'data inserted successfully!';
+			$success = 'data inserted successfully!';
 			}
 
 		} else{
@@ -67,63 +63,51 @@ if(isset($_POST['add_sub_domain'])){
 <!DOCTYPE html>
 <html>
 <head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Create my Demo || BookMan</title>
 	<link rel="stylesheet" type="text/css" href="css/signup.css">
+	<link href='http://fonts.googleapis.com/css?family=Oxygen:400,300,700' rel='stylesheet' type='text/css'>
 </head>
 <body>
+
+<header class="global-header">
 <div>
-<?php if(isset($error)){ ?>
+<nav class="global-nav">
+<a class="logo" href="/">
+<img width="150" title="BookMan" alt="BookMan">
+</a>
+</nav>
+</div>
+</header>
+  <section class="login">
+<form id="login-form" method="post" action="">
+<h1>Try BookMan free for 30 days</h1>
+
+
+<?php if(isset($error) && $error !=''){ ?>
 <div class="error"><?php echo $error; ?></div>
 <?php } ?>
-	<form method="post" action="">
+<?php if(isset($success) && $success !=''){ ?>
+<div class="success"><?php echo $success; ?></div>
+<?php } ?>
 
-		<input type="text" name="name" />
-		<input type="text" name="username" />
-		<input type="password" name="password" />
-		<input type="text" name="subdomain" />
-		<input type="email" name="email" />
-		<input type="submit" name="add_sub_domain" />
-	</form>
+	<input type="text" value="" placeholder="Your Name" tabindex="20" name="name">
+	<input type="text" value="" placeholder="Username" tabindex="20" name="username">
+	<input type="email" value="" placeholder="you@yourcompany.com" tabindex="20"  name="email" />
+	<input type="password" value="" placeholder="*******" tabindex="20"  name="password" />
+
+ <div class="password-container">
+	<input type="text" placeholder="company" tabindex="21" name="subdomain">
+	<span>
+		.bookman.in
+	</span>
 </div>
+<button type="submit" name="add_sub_domain" value="testing" class="button submit">Blah</button>
 
+ </form>   
+  </section>
+    
 
-<!-- multistep form -->
-<form id="msform">
-	<!-- progressbar -->
-	<ul id="progressbar">
-		<li class="active">Account Setup</li>
-		<li>Social Profiles</li>
-		<li>Personal Details</li>
-	</ul>
-	<!-- fieldsets -->
-	<fieldset>
-		<h2 class="fs-title">Create your account</h2>
-		<h3 class="fs-subtitle">This is step 1</h3>
-		<input type="text" name="email" placeholder="Email" />
-		<input type="password" name="pass" placeholder="Password" />
-		<input type="password" name="cpass" placeholder="Confirm Password" />
-		<input type="button" name="next" class="next action-button" value="Next" />
-	</fieldset>
-	<fieldset>
-		<h2 class="fs-title">Social Profiles</h2>
-		<h3 class="fs-subtitle">Your presence on the social network</h3>
-		<input type="text" name="twitter" placeholder="Twitter" />
-		<input type="text" name="facebook" placeholder="Facebook" />
-		<input type="text" name="gplus" placeholder="Google Plus" />
-		<input type="button" name="previous" class="previous action-button" value="Previous" />
-		<input type="button" name="next" class="next action-button" value="Next" />
-	</fieldset>
-	<fieldset>
-		<h2 class="fs-title">Personal Details</h2>
-		<h3 class="fs-subtitle">We will never sell it</h3>
-		<input type="text" name="fname" placeholder="First Name" />
-		<input type="text" name="lname" placeholder="Last Name" />
-		<input type="text" name="phone" placeholder="Phone" />
-		<textarea name="address" placeholder="Address"></textarea>
-		<input type="button" name="previous" class="previous action-button" value="Previous" />
-		<input type="submit" name="submit" class="submit action-button" value="Submit" />
-	</fieldset>
-</form>
 
 <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
 <script rel="javascript" src="js/signup.js" type="text/javascript"></script>
