@@ -1,10 +1,9 @@
 <?php
 error_reporting(2);
 define("_BOOKMAN_INIT",true);
-include_once("private/conn.php");
-include_once('private/connection_pdo.php');	
+include_once($_SERVER['DOCUMENT_ROOT']."/bookman/private/conn.php");
+include_once($_SERVER['DOCUMENT_ROOT']."/bookman/private/connection_pdo.php");	
 
-//require_once("definitions.php");
 date_default_timezone_set("Asia/Calcutta");
 $today = date("Y-m-d");
 if(isset($_POST['add_sub_domain'])){
