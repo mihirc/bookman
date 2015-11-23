@@ -3,8 +3,8 @@ ini_set("display_errors", "1");
 error_reporting(E_ALL);
 
 define("_BOOKMAN_INIT",true);
-include_once($_SERVER['DOCUMENT_ROOT']."/bookman/private/conn.php");
-include_once($_SERVER['DOCUMENT_ROOT']."/bookman/private/connection_pdo.php");	
+include_once("private/conn.php");
+include_once("private/connection_pdo.php");	
 
 date_default_timezone_set("Asia/Calcutta");
 $today = date("Y-m-d");
