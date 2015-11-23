@@ -1,7 +1,6 @@
 <?php
 ini_set('display_errors',E_ALL);
 error_reporting(2);
-
 define("_BOOKMAN_INIT",true);
 include_once("private/conn.php");
 include_once('private/connection_pdo.php');	
@@ -29,11 +28,11 @@ if(isset($_POST['add_sub_domain'])){
 	}
 
 	if($subdomain == ''){
-		$error .= 'Please enter a subdomain<br />';
+		$error .= 'Please enter a Sub Domain<br />';
 	}
 
 	if($email == ''){
-		$error .='Please enter a valid email id<br />';
+		$error .='Please enter a valid Email Id<br />';
 	}
 
 	if(!$error){

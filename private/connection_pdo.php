@@ -16,12 +16,12 @@ function SubDomainCreate($subdomain,$db_username,$db_password){
 		                CREATE USER '$db_username'@'localhost' IDENTIFIED BY '$db_password';
 		                GRANT ALL ON `$subdomain`.* TO '$db_username'@'localhost';
 		                FLUSH PRIVILEGES;") 
-		        or die(print_r($dbh->errorInfo(), true));
+		        or exit(print_r($dbh->errorInfo(), true));
 
 		    } catch (PDOException $e) {
 		        die("DB ERROR: ". $e->getMessage());
 		    }
-    
+
 
 }
 
