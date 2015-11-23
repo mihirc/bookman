@@ -1,22 +1,5 @@
 <?php
 //this is demo edit for thoughtf
-
-//edited by AMIT
-<<<<<<
-
-
-//2nd change by amit
-
-=======
-=======
-//edited by Nikhil
->>>>>>> 90e7f610e3140a8f4bf9178339f04bb7d292068c
-//edit by pankaj
-
-<<<<<<< HEAD
-=======
-
->>>>>>> a7b5fbb496afda7e317dba984639a4057cc90436
 define("_BOOKMAN_INIT",true);
 require_once("private/conn.php");
 
