@@ -39,7 +39,7 @@ if(isset($_POST['add_sub_domain'])){
 
 		$checkavailability = $db->get_var("SELECT COUNT(*) FROM qzbm_clients_subdomains WHERE qzbmc_subdomain='$subdomain' OR qzbmc_emailid='$email'");
 		if($checkavailability == 0){
-			
+			echo '123123213123';
 			$username_fetcher = PasswordGenerator("1");	
 			$decoded = json_decode($username_fetcher,true);
 		
