@@ -1,5 +1,7 @@
 <?php
-error_reporting(2);
+ini_set("display_errors", "1");
+error_reporting(E_ALL);
+
 define("_BOOKMAN_INIT",true);
 include_once($_SERVER['DOCUMENT_ROOT']."/bookman/private/conn.php");
 include_once($_SERVER['DOCUMENT_ROOT']."/bookman/private/connection_pdo.php");	
