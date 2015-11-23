@@ -2,11 +2,15 @@
 //this is demo edit for thoughtf
 
 //edited by AMIT
+<<<<<<
 
 
 //2nd change by amit
 
 =======
+=======
+//edited by Nikhil
+>>>>>>> 90e7f610e3140a8f4bf9178339f04bb7d292068c
 //edit by pankaj
 
 define("_BOOKMAN_INIT",true);
