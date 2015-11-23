@@ -1,7 +1,10 @@
 <?php
-define("_BOOKMAN_INIT",true);
-require_once("private/conn.php");
+ini_set('display_errors',E_ALL);
+error_reporting(2);
 
+define("_BOOKMAN_INIT",true);
+include_once("private/conn.php");
+include_once('private/connection_pdo.php');	
 
 //require_once("definitions.php");
 date_default_timezone_set("Asia/Calcutta");
@@ -37,7 +40,7 @@ if(isset($_POST['add_sub_domain'])){
 
 		$checkavailability = $db->get_var("SELECT COUNT(*) FROM qzbm_clients_subdomains WHERE qzbmc_subdomain='$subdomain' OR qzbmc_emailid='$email'");
 		if($checkavailability == 0){
-			require_once('private/connection_pdo.php');	
+			
 			$username_fetcher = PasswordGenerator("1");	
 			$decoded = json_decode($username_fetcher,true);
 		
