@@ -1,4 +1,5 @@
 <?php
+//this is demo edit for thoughtf
 define("_BOOKMAN_INIT",true);
 require_once("private/conn.php");
 
