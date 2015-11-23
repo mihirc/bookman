@@ -1,4 +1,5 @@
 <?php
+error_reporting(2);
 define("_BOOKMAN_INIT",true);
 require_once("private/conn.php");
 
