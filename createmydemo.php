@@ -1,5 +1,4 @@
 <?php
-ini_set('display_errors',E_ALL);
 error_reporting(2);
 define("_BOOKMAN_INIT",true);
 include_once("private/conn.php");
@@ -9,6 +8,9 @@ include_once('private/connection_pdo.php');
 date_default_timezone_set("Asia/Calcutta");
 $today = date("Y-m-d");
 if(isset($_POST['add_sub_domain'])){
+	
+	print_r($_POST);
+
 	$error = '';
 
 	//SANITIZATION OF STRINGS
