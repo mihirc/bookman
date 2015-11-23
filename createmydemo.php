@@ -9,8 +9,7 @@ require_once("private/connection_pdo.php");
 date_default_timezone_set("Asia/Calcutta");
 $today = date("Y-m-d");
 if(isset($_POST['add_sub_domain'])){
-	
-	//print_r($_POST);
+
 
 	$error = '';
 
@@ -39,20 +38,17 @@ if(isset($_POST['add_sub_domain'])){
 	}
 
 	if(!$error){
-		echo 'gets till no errors';
-		global $db;
-		print_r($db);
+
 		$checkavailability = $db->get_var("SELECT COUNT(*) FROM qzbm_clients_subdomains WHERE qzbmc_subdomain='$subdomain' OR qzbmc_emailid='$email'");
-		$db->debug();
 		if($checkavailability == 0){
-			echo '123123213123';
+			
 			$username_fetcher = PasswordGenerator("1");	
 			$decoded = json_decode($username_fetcher,true);
 		
 			$username_db = $decoded['results'][0]['randompassword']['username'];
 			$password_db = $decoded['results'][0]['randompassword']['password'];
 			
-			//$trial = SubDomainCreate($subdomain,$username_db,$password_db);	
+			$trial = SubDomainCreate($subdomain,$username_db,$password_db);	
 
 
 			$insert = $db->query("INSERT INTO qzbm_clients_subdomains VALUES ('','','$username','$password','$subdomain','','$today','1','$username_db','$password_db')");
