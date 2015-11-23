@@ -40,6 +40,7 @@ if(isset($_POST['add_sub_domain'])){
 
 	if(!$error){
 		echo 'gets till no errors';
+		global $db;
 		$checkavailability = $db->get_var("SELECT COUNT(*) FROM qzbm_clients_subdomains WHERE qzbmc_subdomain='$subdomain' OR qzbmc_emailid='$email'");
 		$db->debug();
 		if($checkavailability == 0){
