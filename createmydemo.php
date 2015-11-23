@@ -9,7 +9,7 @@ date_default_timezone_set("Asia/Calcutta");
 $today = date("Y-m-d");
 if(isset($_POST['add_sub_domain'])){
 	
-	print_r($_POST);
+	//print_r($_POST);
 
 	$error = '';
 
@@ -38,7 +38,7 @@ if(isset($_POST['add_sub_domain'])){
 	}
 
 	if(!$error){
-
+		echo 'gets till no errors';
 		$checkavailability = $db->get_var("SELECT COUNT(*) FROM qzbm_clients_subdomains WHERE qzbmc_subdomain='$subdomain' OR qzbmc_emailid='$email'");
 		if($checkavailability == 0){
 			echo '123123213123';
