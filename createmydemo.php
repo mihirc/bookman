@@ -27,11 +27,11 @@ if(isset($_POST['add_sub_domain'])){
 	}
 
 	if($subdomain == ''){
-		$error .= 'Please enter a subdomain<br />';
+		$error .= 'Please enter a Sub Domain<br />';
 	}
 
 	if($email == ''){
-		$error .='Please enter a valid email id<br />';
+		$error .='Please enter a valid Email Id<br />';
 	}
 
 	if(!$error){
