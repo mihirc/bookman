@@ -1,6 +1,7 @@
 <?php
 //this is demo edit for thoughtf
 //edit by pankaj
+//edit Namrata
 define("_BOOKMAN_INIT",true);
 require_once("private/conn.php");
 
