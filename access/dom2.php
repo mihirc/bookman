@@ -1,0 +1,1 @@
+<?php\ndefined("_BOOKMAN_INIT") or die("Direct permission to this file disallowed")\n?>
