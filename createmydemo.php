@@ -11,7 +11,7 @@ $today = date("Y-m-d");
 if(isset($_POST['add_sub_domain'])){
 
 
-print_r($db);
+//print_r($db);
 
 	$error = '';
 
@@ -50,7 +50,7 @@ print_r($db);
 
 		$checkavailability = $db->get_var("SELECT COUNT(*) FROM qzbm_clients_subdomains WHERE qzbmc_subdomain='$subdomain' OR qzbmc_emailid='$email'");
 		
-		$db->debug();
+		//$db->debug();
 
 
 		if($checkavailability == 0){
@@ -60,11 +60,11 @@ print_r($db);
 			 
 			$username_db = str_replace("'", "", $decoded['results'][0]['randompassword']['username']);
 
-			echo"usernm".$username_db;
+			//echo"usernm".$username_db;
 
 			$password_db = str_replace("'", "", $decoded['results'][0]['randompassword']['password']);
 
-			echo "pwd".$password_db;			
+			//echo "pwd".$password_db;			
 			
 			if(($username_db!='') && ($password_db!='')){
 			$trial = SubDomainCreate($subdomain,$username_db,$password_db);	
@@ -100,11 +100,11 @@ fclose($myfile);
 
 $decode=json_decode($string);
 
-echo "hi".$decode->username;
+//echo "hi".$decode->username;
 
 $newdb= new ezSQL_mysql($decode->username,$decode->password,$decode->dbname,'localhost');
 
-$sql=file_get_contents('0_1.sql');
+//$sql=file_get_contents('0_1.sql');
 
 
 $queries = array( "CREATE TABLE IF NOT EXISTS `admin` (
