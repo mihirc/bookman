@@ -100,11 +100,8 @@ fclose($myfile);
 
 $decode=json_decode($string);
 
-//echo "hi".$decode->username;
-
 $newdb= new ezSQL_mysql($decode->username,$decode->password,$decode->dbname,'localhost');
 
-//$sql=file_get_contents('0_1.sql');
 
 
 $queries = array( "CREATE TABLE IF NOT EXISTS `admin` (
@@ -117,7 +114,7 @@ $queries = array( "CREATE TABLE IF NOT EXISTS `admin` (
   `ad_usertype` text NOT NULL,
   `ad_status` text NOT NULL,
   PRIMARY KEY (`ad_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;",
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;",
 
 
  "CREATE TABLE IF NOT EXISTS `template` (
@@ -125,7 +122,7 @@ $queries = array( "CREATE TABLE IF NOT EXISTS `admin` (
   `tem_name` varchar(30) NOT NULL,
   `tem_code` text NOT NULL,
   PRIMARY KEY (`tem_id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;",
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;",
 
 
 "CREATE TABLE IF NOT EXISTS `smstrack` (
@@ -139,7 +136,7 @@ $queries = array( "CREATE TABLE IF NOT EXISTS `admin` (
   `group_id` int(11) NOT NULL,
   `mss_id` int(11) NOT NULL,
   PRIMARY KEY (`strack_id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=72 ;",
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;",
 
 
 
@@ -153,7 +150,7 @@ $queries = array( "CREATE TABLE IF NOT EXISTS `admin` (
   `b_fee` text NOT NULL,
   `b_status` text NOT NULL,
   PRIMARY KEY (`b_id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;",
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;",
 
 
 
@@ -167,7 +164,7 @@ $queries = array( "CREATE TABLE IF NOT EXISTS `admin` (
   `type` text NOT NULL,
   `group_id` int(11) NOT NULL,
   PRIMARY KEY (`mss_id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=49 ;",
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;",
 
 
 "CREATE TABLE IF NOT EXISTS `invoice_payments` (
@@ -180,7 +177,7 @@ $queries = array( "CREATE TABLE IF NOT EXISTS `admin` (
   `ad_id` int(11) NOT NULL,
   `inp_status` text NOT NULL,
   PRIMARY KEY (`inp_id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=44 ;",
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;",
 
 
 "CREATE TABLE IF NOT EXISTS `invoice_items` (
@@ -205,7 +202,7 @@ $queries = array( "CREATE TABLE IF NOT EXISTS `admin` (
   `in_comment` text NOT NULL,
   `in_b_id` int(11) NOT NULL COMMENT 'batch id',
   PRIMARY KEY (`in_id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=7 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 ",
 
 "CREATE TABLE IF NOT EXISTS `batch` (
@@ -217,7 +214,7 @@ $queries = array( "CREATE TABLE IF NOT EXISTS `admin` (
   `b_fee` text NOT NULL,
   `b_status` text NOT NULL,
   PRIMARY KEY (`b_id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 ",
 
 "CREATE TABLE IF NOT EXISTS `customer` (
@@ -230,7 +227,7 @@ $queries = array( "CREATE TABLE IF NOT EXISTS `admin` (
   `cust_status` int(11) NOT NULL,
   `cust_dor` date NOT NULL,
   PRIMARY KEY (`cust_id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=10 ;",
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;",
 
 
 "CREATE TABLE IF NOT EXISTS `customer_batch` (
@@ -241,7 +238,7 @@ $queries = array( "CREATE TABLE IF NOT EXISTS `admin` (
   `cb_amount` text NOT NULL,
   `cb_status` int(11) NOT NULL,
   PRIMARY KEY (`cb_id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=13 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 ",
 
 "CREATE TABLE IF NOT EXISTS `category` (
@@ -249,7 +246,7 @@ $queries = array( "CREATE TABLE IF NOT EXISTS `admin` (
   `c_name` varchar(100) NOT NULL,
   `c_status` int(11) NOT NULL,
   PRIMARY KEY (`c_id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 "
 
 
