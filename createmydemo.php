@@ -247,7 +247,9 @@ $queries = array( "CREATE TABLE IF NOT EXISTS `admin` (
   `c_status` int(11) NOT NULL,
   PRIMARY KEY (`c_id`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
-"
+",
+
+"INSERT INTO admin VALUES ('','','','$name','$username','$password','1','1')";
 
 
 
