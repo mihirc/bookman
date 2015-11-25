@@ -267,7 +267,7 @@ $create=$newdb->query($firstquery);
 }
 
 
-			$success = 'Your Account was successfully created. Please visit <a href="'.$subdomain.'.bookman.in">your new domain</a> to start using BookMan. <br /> Also, check your inbox. We have sent you an email with additional details.';
+			$success = 'Your Account was successfully created. Please visit <a href="http://'.$subdomain.'.bookman.in">your new domain</a> to start using BookMan. <br /> Also, check your inbox. We have sent you an email with additional details.';
 			}
 			}
 		} else{
