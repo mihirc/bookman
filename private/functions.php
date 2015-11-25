@@ -1,5 +1,5 @@
 <?php
-_defined("_BOOKMAN_INIT") or die("direct access to this resource is not allowed");
+defined("_BOOKMAN_INIT") or die("direct access to this resource is not allowed");
 
 function getTemplate($file, $msg=null, $name=null) {
 
