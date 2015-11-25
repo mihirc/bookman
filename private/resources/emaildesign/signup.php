@@ -1,0 +1,264 @@
+<style>
+/* -------------------------------------
+        GLOBAL
+------------------------------------- */
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+    font-size: 100%;
+    line-height: 1.6;
+}
+
+img {
+    max-width: 100%;
+}
+
+body {
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-size-adjust: none;
+    width: 100%!important;
+    height: 100%;
+}
+
+
+/* -------------------------------------
+        ELEMENTS
+------------------------------------- */
+a {
+    color: #348eda;
+}
+
+.email-btn-primary {
+    text-decoration: none;
+    color: #FFF;
+    background-color: #348eda;
+    border: solid #348eda;
+    border-width: 10px 20px;
+    line-height: 2;
+    font-weight: bold;
+    margin-right: 10px;
+    text-align: center;
+    cursor: pointer;
+    display: inline-block;
+    border-radius: 25px;
+}
+
+.btn-secondary {
+    text-decoration: none;
+    color: #FFF;
+    background-color: #aaa;
+    border: solid #aaa;
+    border-width: 10px 20px;
+    line-height: 2;
+    font-weight: bold;
+    margin-right: 10px;
+    text-align: center;
+    cursor: pointer;
+    display: inline-block;
+    border-radius: 25px;
+}
+
+.last {
+    margin-bottom: 0;
+}
+
+.first {
+    margin-top: 0;
+}
+
+.padding {
+    padding: 10px 0;
+}
+
+
+/* -------------------------------------
+        BODY
+------------------------------------- */
+table.body-wrap {
+    width: 100%;
+    padding: 20px;
+}
+
+table.body-wrap .container {
+    border: 1px solid #f0f0f0;
+}
+
+
+/* -------------------------------------
+        FOOTER
+------------------------------------- */
+table.footer-wrap {
+    width: 100%;    
+    clear: both!important;
+}
+
+.footer-wrap .container p {
+    font-size: 12px;
+    color: #666;
+    
+}
+
+table.footer-wrap a {
+    color: #999;
+}
+
+
+/* -------------------------------------
+        TYPOGRAPHY
+------------------------------------- */
+h1, h2, h3 {
+    font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    color: #000;
+    margin: 40px 0 10px;
+    line-height: 1.2;
+    font-weight: 200;
+}
+
+h1 {
+    font-size: 36px;
+}
+h2 {
+    font-size: 28px;
+}
+h3 {
+    font-size: 22px;
+}
+
+p, ul, ol {
+    margin-bottom: 10px;
+    font-weight: normal;
+    font-size: 14px;
+}
+
+ul li, ol li {
+    margin-left: 5px;
+    list-style-position: inside;
+}
+
+.dotted_border{
+    height:2px;
+    border-top:1px dashed #f1f1f1;
+    
+    width:100%;
+    float:left;
+}
+
+/* ---------------------------------------------------
+        RESPONSIVENESS
+        Nuke it from orbit. It's the only way to be sure.
+------------------------------------------------------ */
+
+/* Set a max-width, and make it display as block so it will automatically stretch to that width, but will also shrink down on a phone or something */
+.container {
+    display: block!important;
+    max-width: 600px!important;
+    margin: 0 auto!important; /* makes it centered */
+    clear: both!important;
+}
+
+/* Set the padding on the td rather than the div for Outlook compatibility */
+.body-wrap .container {
+    padding: 20px;
+}
+
+/* This should also be a block element, so that it will fill 100% of the .container */
+.content {
+    max-width: 600px;
+    margin: 0 auto;
+    display: block;
+}
+
+/* Let's make sure tables in the content area are 100% wide */
+.content table {
+    width: 100%;
+}
+
+</style>
+</head>
+
+<body bgcolor="#f6f6f6">
+
+<!-- body -->
+<table class="body-wrap" bgcolor="#f6f6f6">
+    <tr>
+        <td></td>
+        <td class="container" bgcolor="#FFFFFF">
+
+            <!-- content -->
+            <div class="content">
+            <table>
+                
+                
+                <tr>
+                    <td>
+                        <p>Hi <?php echo $name; ?>,</p>
+                        <p>Thanks for signing up for BookMan - Wise decision to keep all your data managed. Plus, we have planned superb features in coming days.</p>                      
+                        <p>The best way to like BookMan is to start using it, it is simple , fast and always available - as its web based solution.</p>
+                        <h2>Feel free to get in touch with our team for any queries or support!</h2>
+                        <p>Please click on the registration link below. Information that we have available with us will already be filled in.</p>
+                        <p>Please note that this is an encrypted URL & hence your information is safe. We request you NOT to share this registration link with anyone.</p>
+                        <table>
+                            <tr>
+                                <td class="padding">
+                                    <p><a href="http://<?php echo $msg; ?>" class="email-btn-primary">Click here to login to your BookMan website!</a></p>
+                                </td>
+                            </tr> 
+                        </table>
+                        <p>Cheers,</p>
+                        <p>BookMan Team.</p>
+                        
+                    </td>
+                </tr>
+                
+                <tr>
+        
+        <td>
+            <span class="dotted_border"></span>
+                    <img src="http://bookman.in/wp-content/uploads/2015/11/eat_logos_business_people.png" alt="BookMan" />
+                    
+                    
+                </td>
+        
+    </tr>
+    
+                
+            </table>
+            </div>
+            <!-- /content -->
+            
+        </td>
+        <td></td>
+    </tr>
+    
+    
+    
+</table>
+<!-- /body -->
+
+<!-- footer -->
+<table class="footer-wrap">
+    <tr>
+        <td></td>
+        <td class="container">
+            
+            <!-- content -->
+            <div class="content">
+                <table>
+                    <tr>
+                        <td align="center">
+                            <p>Powered by <a href="http://bookman.in">BookMan</a> - Customer Database Management System.
+                            </p>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <!-- /content -->
+            
+        </td>
+        <td></td>
+    </tr>
+</table>
+<!-- /footer -->
+
+</body>

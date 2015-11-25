@@ -266,9 +266,33 @@ $create=$newdb->query($firstquery);
 
 }
 
+$emailarray = json_encode(array(array('name'=>$name,'email'=>$email,'type'=>'to')));
+$msg = $subdomain.'.bookman.in';
 
 			$success = 'Your Account was successfully created. Please visit <a href="http://'.$subdomain.'.bookman.in">your new domain</a> to start using BookMan. <br /> Also, check your inbox. We have sent you an email with additional details.';
-			}
+			
+
+      $content = getTemplate('private/resources/emaildesign/signup.php', $msg, $name);
+
+        $html = $content;
+        $subject = "Welcome to BookMan";
+        $message= "";
+        $subaccount = "globenbeyond";
+        $fromemail="noreply@bookman.in";
+        $replytoemail="noreply@bookman.in";
+        $fromname="BookMan";
+        $attachmentarray=null;
+
+//echo $html;
+
+        MandrillEmail($fromemail, $subject, $replytoemail,$fromname, json_encode($html), $attachmentarray, $emailarray, $subaccount);
+  
+
+
+
+
+
+      }
 			}
 		} else{
 			$error .="This subdomain / email ID is already registered. Please try another one!";
