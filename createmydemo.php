@@ -5,6 +5,7 @@ error_reporting(E_ALL);
 define("_BOOKMAN_INIT",true);
 require_once("private/conn.php");
 require_once("private/connection_pdo.php");	
+require_once("private/functions.php");
 
 date_default_timezone_set("Asia/Calcutta");
 $today = date("Y-m-d");
@@ -266,7 +267,7 @@ $create=$newdb->query($firstquery);
 }
 
 
-			$success = 'data inserted successfully!';
+			$success = 'Your Account was successfully created. Please visit <a href="'.$subdomain.'.bookman.in">your new domain</a> to start using BookMan. <br /> Also, check your inbox. We have sent you an email with additional details.';
 			}
 			}
 		} else{
