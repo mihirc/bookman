@@ -21,7 +21,9 @@ if(isset($_POST['add_sub_domain'])){
 	$username = filter_var($_POST['username'],FILTER_SANITIZE_STRING);
   $textpassword = filter_var($_POST['password']);
 	$password = MD5(filter_var($_POST['password']));
-	$subdomain = filter_var($_POST['subdomain'],FILTER_SANITIZE_STRING);
+
+
+	$subdomain = strtolower(filter_var($_POST['subdomain'],FILTER_SANITIZE_STRING));
 	$email = filter_var($_POST['email'],FILTER_SANITIZE_EMAIL);
 
 	//VALIDATION
@@ -83,7 +85,7 @@ defined("_BOOKMAN_INIT") or die("Direct permission to this file disallowed");
 $myfile = fopen("access/$subdomain.php", "w") or die("Unable to open file!");
 fwrite($myfile, $content);
 
-
+//$subdomainlower=strtolower($subdomain);
 
 $array = array();
 
