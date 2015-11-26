@@ -196,9 +196,17 @@ ul li, ol li {
                         <p>Thanks for signing up for BookMan - Wise decision to keep all your data managed. Plus, we have planned superb features in coming days.</p>                      
                         <p>The best way to like BookMan is to start using it, it is simple , fast and always available - as its web based solution.</p>
                         <h2>Feel free to get in touch with our team for any queries or support!</h2>
-                        <p>Please click on the registration link below. Information that we have available with us will already be filled in.</p>
-                        <p>Please note that this is an encrypted URL & hence your information is safe. We request you NOT to share this registration link with anyone.</p>
+                        <p>Please find your login information below: </p>
+                    
                         <table>
+                        <tr>
+                        <td>Username:</td>
+                        <td><?php echo $Username; ?></td>
+                        </tr>
+                        <tr>
+                        <td>Password:</td>
+                        <td><?php echo $password; ?></td>
+                        </tr>
                             <tr>
                                 <td class="padding">
                                     <p><a href="http://<?php echo $msg; ?>" class="email-btn-primary">Click here to login to your BookMan website!</a></p>

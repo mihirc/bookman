@@ -1,7 +1,7 @@
 <?php
 defined("_BOOKMAN_INIT") or die("direct access to this resource is not allowed");
 
-function getTemplate($file, $msg=null, $name=null) {
+function getTemplate($file, $msg=null, $name=null, $username=null, $password=null) {
 
     ob_start(); // start output buffer
 

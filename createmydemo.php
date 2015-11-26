@@ -19,6 +19,7 @@ if(isset($_POST['add_sub_domain'])){
 	//SANITIZATION OF STRINGS
 	$name = filter_var($_POST['name'],FILTER_SANITIZE_STRING);
 	$username = filter_var($_POST['username'],FILTER_SANITIZE_STRING);
+  $textpassword = filter_var($_POST['password']);
 	$password = MD5(filter_var($_POST['password']));
 	$subdomain = filter_var($_POST['subdomain'],FILTER_SANITIZE_STRING);
 	$email = filter_var($_POST['email'],FILTER_SANITIZE_EMAIL);
@@ -272,7 +273,7 @@ $msg = $subdomain.'.bookman.in';
 			$success = 'Your Account was successfully created. Please visit <a href="http://'.$subdomain.'.bookman.in">your new domain</a> to start using BookMan. <br /> Also, check your inbox. We have sent you an email with additional details.';
 			
 
-      $content = getTemplate('private/resources/emaildesign/signup.php', $msg, $name);
+      $content = getTemplate('private/resources/emaildesign/signup.php', $msg, $name, $username, $textpassword);
 
         $html = $content;
         $subject = "Welcome to BookMan";
