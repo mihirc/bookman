@@ -348,7 +348,7 @@ $msg = $subdomain.'.bookman.in';
 		.bookman.in
 	</span>
 </div>
-<button type="submit" name="add_sub_domain" value="testing" class="button submit">Blah</button>
+<button type="submit" name="add_sub_domain" value="testing" class="button submit">Create my Account!</button>
 
  </form>   
   </section>

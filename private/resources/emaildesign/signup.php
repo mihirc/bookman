@@ -201,12 +201,14 @@ ul li, ol li {
                         <table>
                         <tr>
                         <td>Username:</td>
-                        <td><?php echo $Username; ?></td>
+                        <td><?php echo $username; ?></td>
                         </tr>
                         <tr>
                         <td>Password:</td>
                         <td><?php echo $password; ?></td>
                         </tr>
+                        </table>
+                        <table>
                             <tr>
                                 <td class="padding">
                                     <p><a href="http://<?php echo $msg; ?>" class="email-btn-primary">Click here to login to your BookMan website!</a></p>
