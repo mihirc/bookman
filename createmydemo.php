@@ -286,7 +286,7 @@ $queries = array( "CREATE TABLE IF NOT EXISTS `admin` (
 
 );
 
-
+//added
 foreach($queries as $firstquery){
 
 
