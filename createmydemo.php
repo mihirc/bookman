@@ -62,11 +62,11 @@ if(isset($_POST['add_sub_domain'])){
 			$username_fetcher = PasswordGenerator("1");	
 			$decoded = json_decode($username_fetcher,true);
 			 
-			$username_db = str_replace("'", "", $decoded['results'][0]['randompassword']['username']);
+			$username_db = addslashes(str_replace("'", "", $decoded['results'][0]['randompassword']['username']));
 
 			//echo"usernm".$username_db;
 
-			$password_db = str_replace("'", "", $decoded['results'][0]['randompassword']['password']);
+			$password_db = addslashes(str_replace("'", "", $decoded['results'][0]['randompassword']['password']));
 
 			//echo "pwd".$password_db;			
 			
