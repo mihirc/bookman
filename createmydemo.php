@@ -139,7 +139,7 @@ $queries = array( "CREATE TABLE IF NOT EXISTS `admin` (
   `company_email` text NOT NULL,
   `company_address` text NOT NULL,
   PRIMARY KEY (`company_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=10 ;",
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;",
 
 
 "CREATE TABLE IF NOT EXISTS `member_sms` (
@@ -150,7 +150,7 @@ $queries = array( "CREATE TABLE IF NOT EXISTS `admin` (
   `ms_status` text NOT NULL,
   `notification` text NOT NULL,
   PRIMARY KEY (`ms_id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=65 ;",
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;",
 
 "CREATE TABLE IF NOT EXISTS `smstrack` (
   `strack_id` int(11) NOT NULL AUTO_INCREMENT,
