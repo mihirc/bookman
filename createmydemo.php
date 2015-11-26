@@ -105,6 +105,7 @@ $decode=json_decode($string);
 $newdb= new ezSQL_mysql($decode->username,$decode->password,$decode->dbname,'localhost');
 
 
+$date=date('Y-m-d');
 
 $queries = array( "CREATE TABLE IF NOT EXISTS `admin` (
   `ad_id` int(11) NOT NULL AUTO_INCREMENT,
@@ -126,6 +127,28 @@ $queries = array( "CREATE TABLE IF NOT EXISTS `admin` (
   PRIMARY KEY (`tem_id`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;",
 
+
+
+"CREATE TABLE IF NOT EXISTS `company_details` (
+  `company_id` int(11) NOT NULL AUTO_INCREMENT,
+  `ad_id` int(11) NOT NULL,
+  `company_name` text NOT NULL,
+  `company_phone` text NOT NULL,
+  `company_email` text NOT NULL,
+  `company_address` text NOT NULL,
+  PRIMARY KEY (`company_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=10 ;",
+
+
+"CREATE TABLE IF NOT EXISTS `member_sms` (
+  `ms_id` int(11) NOT NULL AUTO_INCREMENT,
+  `ad_id` int(11) NOT NULL,
+  `ms_credits` int(11) NOT NULL,
+  `ms_date` date NOT NULL,
+  `ms_status` text NOT NULL,
+  `notification` text NOT NULL,
+  PRIMARY KEY (`ms_id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=65 ;",
 
 "CREATE TABLE IF NOT EXISTS `smstrack` (
   `strack_id` int(11) NOT NULL AUTO_INCREMENT,
@@ -251,7 +274,11 @@ $queries = array( "CREATE TABLE IF NOT EXISTS `admin` (
 ) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 ",
 
-"INSERT INTO admin VALUES ('','','','$name','$username','$password','1','1')"
+"INSERT INTO admin VALUES ('','','','$name','$username','$password','1','1')",
+
+
+
+"INSERT INTO member_sms VALUES ('','','100','$date','1','')"
 
 
 
