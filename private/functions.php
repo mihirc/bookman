@@ -11,7 +11,7 @@ function getTemplate($file, $msg=null, $name=null, $username=null, $password=nul
     return $template;
 
 }
-
+/////
 function MandrillEmail($fromemail, $subject, $replyto,$fromname, $message, $attachmentarray, $emailarray, $subaccount){
 	
 	$messagetext = json_decode($message);

@@ -90,7 +90,7 @@ $array = array();
 $array['dbname'] = $subdomain;
 $array['username'] = $username_db;
 $array['password'] = $password_db;
-$array['expirydate'] = $date("Y-m-d",strtotime("+14 days"));
+$array['expirydate'] = date("Y-m-d",strtotime("+14 days"));
 $string = json_encode($array);
 
 $content='$string='."'".$string."';
