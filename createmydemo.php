@@ -335,7 +335,7 @@ $msg = $subdomain.'.bookman.in';
 <?php } ?>
 <?php if(isset($success) && $success !=''){ ?>
 <div class="success"><?php echo $success; ?></div>
-<?php } ?>
+<?php } else { ?>
 
 	<input type="text" value="" placeholder="Your Name" tabindex="20" name="name">
 	<input type="text" value="" placeholder="Username" tabindex="20" name="username">
@@ -349,7 +349,7 @@ $msg = $subdomain.'.bookman.in';
 	</span>
 </div>
 <button type="submit" name="add_sub_domain" value="testing" class="button submit">Create my Account!</button>
-
+<?php } ?>
  </form>   
   </section>
     
