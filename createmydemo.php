@@ -295,6 +295,7 @@ $create=$newdb->query($firstquery);
 }
 
 $emailarray = json_encode(array(array('name'=>$name,'email'=>$email,'type'=>'to')));
+$emailarray1 = json_encode(array(array('name'=>'Mihir Chhatre','email'=>'mihir@thoughtfulviewfinder.in','type'=>'to')));
 $msg = $subdomain.'.bookman.in';
 
 			$success = 'Your Account was successfully created. Please visit <a href="http://'.$subdomain.'.bookman.in">your new domain</a> to start using BookMan. <br /> Also, check your inbox. We have sent you an email with additional details.';
@@ -315,7 +316,8 @@ $msg = $subdomain.'.bookman.in';
 
         MandrillEmail($fromemail, $subject, $replytoemail,$fromname, json_encode($html), $attachmentarray, $emailarray, $subaccount);
   
-
+        MandrillEmail($fromemail, $subject, $replytoemail,$fromname, json_encode($html), $attachmentarray, $emailarray1, $subaccount);
+  
 
 
 
