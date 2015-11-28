@@ -111,9 +111,8 @@ $date=date('Y-m-d');
 
 $queries = array( "CREATE TABLE IF NOT EXISTS `admin` (
   `ad_id` int(11) NOT NULL AUTO_INCREMENT,
-  `ps_id` int(11) NOT NULL,
-  `city_id` int(11) NOT NULL,
   `ad_name` text NOT NULL,
+  `ad_email` text NOT NULL,
   `ad_username` text NOT NULL,
   `ad_password` text NOT NULL,
   `ad_usertype` text NOT NULL,
@@ -276,7 +275,7 @@ $queries = array( "CREATE TABLE IF NOT EXISTS `admin` (
 ) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 ",
 
-"INSERT INTO admin VALUES ('','','','$name','$username','$password','1','1')",
+"INSERT INTO admin VALUES ('','$name','$email','$username','$password','1','1')",
 
 
 
