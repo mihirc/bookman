@@ -357,7 +357,7 @@ $msg = $subdomain.'.bookman.in';
 </header>
   <section class="login">
 <form id="login-form" method="post" action="">
-<h1>Try BookMan free for 30 days</h1>
+<h1>Try BookMan free for 14 days</h1>
 
 
 <?php if(isset($error) && $error !=''){ ?>
