@@ -1,7 +1,16 @@
 <?php
 defined("_BOOKMAN_INIT") or die("direct access to this resource is not allowed");
 
+
+
+
+
+
+
 function getTemplate($file, $msg=null, $name=null, $username=null, $password=null) {
+
+
+
 
     ob_start(); // start output buffer
 
@@ -47,7 +56,22 @@ function MandrillEmail($fromemail, $subject, $replyto,$fromname, $message, $atta
     );
     $async = false;
     $ip_pool = 'Main Pool';
+  
+
+
+
+
+
+
     $result = $mandrill->messages->send($message, $async, $ip_pool, $send_at=null);
+    
+storeemail($result);
+
+
+//print_r($result);
+
+   
+
 
 } catch(Mandrill_Error $e) {
     echo 'A mandrill error occurred: ' . get_class($e) . ' - ' . $e->getMessage();
@@ -57,6 +81,31 @@ function MandrillEmail($fromemail, $subject, $replyto,$fromname, $message, $atta
 	
 }
 
+
+function storeemail($result)
+{
+
+
+
+$status=$result[0]['status'];
+
+   $emailid=$result[0]['_id'];
+
+$datetime=date("Y-m-d h:i:s");
+
+
+
+
+require_once("conn.php");
+
+
+
+global $db;
+
+
+$email_details=$db->query("INSERT INTO email_details VALUES('','$emailid','','$status','$datetime','')");
+
+}
 
 
 ?>
