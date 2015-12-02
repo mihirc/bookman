@@ -38,7 +38,7 @@ $html = $message;
 
 //echo $html;
 
-        MandrillEmail($fromemail, $subject, $replytoemail,$fromname, json_encode($html), $attachmentarray, $emailarray, $subaccount);
+        MandrillEmail($fromemail, $subject, $replytoemail,$fromname, json_encode($html), $attachmentarray, $emailarray, $subaccount,$clid);
 
 
 
