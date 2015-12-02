@@ -21,7 +21,7 @@ function getTemplate($file, $msg=null, $name=null, $username=null, $password=nul
 
 }
 /////
-function MandrillEmail($fromemail, $subject, $replyto,$fromname, $message, $attachmentarray, $emailarray, $subaccount){
+function MandrillEmail($fromemail, $subject, $replyto,$fromname, $message, $attachmentarray, $emailarray, $subaccount,$clid){
 	
 	$messagetext = json_decode($message);
 	
@@ -64,8 +64,8 @@ function MandrillEmail($fromemail, $subject, $replyto,$fromname, $message, $atta
 
 
     $result = $mandrill->messages->send($message, $async, $ip_pool, $send_at=null);
-    
-storeemail($result);
+
+storeemail($result,$clid);
 
 
 //print_r($result);
@@ -82,7 +82,7 @@ storeemail($result);
 }
 
 
-function storeemail($result)
+function storeemail($result,$clid)
 {
 
 
@@ -103,7 +103,7 @@ require_once("conn.php");
 global $db;
 
 
-$email_details=$db->query("INSERT INTO email_details VALUES('','$emailid','','$status','$datetime','')");
+$email_details=$db->query("INSERT INTO email_details VALUES('','$emailid','$clid','$status','$datetime','')");
 
 }
 
