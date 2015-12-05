@@ -65,6 +65,10 @@ function MandrillEmail($fromemail, $subject, $replyto,$fromname, $message, $atta
 
     $result = $mandrill->messages->send($message, $async, $ip_pool, $send_at=null);
 
+
+
+
+
 storeemail($result,$clid);
 
 
@@ -85,27 +89,61 @@ storeemail($result,$clid);
 function storeemail($result,$clid)
 {
 
+require_once ('resources/Mandrill.php');
+    
+
+require_once("conn.php");
+
+global $db;
 
 
 $status=$result[0]['status'];
 
    $emailid=$result[0]['_id'];
 
+   //echo "id=".$emailid;
+
 $datetime=date("Y-m-d h:i:s");
 
 
 
 
-require_once("conn.php");
 
 
 
-global $db;
 
 
-$email_details=$db->query("INSERT INTO email_details VALUES('','$emailid','$clid','$status','$datetime','')");
+// $id='d499e4f19ebc4af8986110bea42f69c6';
+
+// //echo "idddddd== ".$id;
+
+// $mandrill = new Mandrill('2_9hFayIJLuag-YEnJVdYQ');
+// $result1 = $mandrill->messages->info($id);
+//    //print_r($result1);
+
+// $json=json_encode($result1);
+
+
+//print_r($json);
+
+$email_details=$dbqzbmc->query("INSERT INTO email_details VALUES('','$emailid','$clid','$status','$datetime','','1')");
+
+
+
+
+
 
 }
+
+
+
+
+
+   
+    
+
+
+
 
 
 ?>
