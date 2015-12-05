@@ -52,7 +52,7 @@ if(isset($_POST['add_sub_domain'])){
 
 
 
-		$checkavailability = $db->get_var("SELECT COUNT(*) FROM qzbm_clients_subdomains WHERE qzbmc_subdomain='$subdomain' OR qzbmc_emailid='$email'");
+		$checkavailability = $dbqzbmc->get_var("SELECT COUNT(*) FROM qzbm_clients_subdomains WHERE qzbmc_subdomain='$subdomain' OR qzbmc_emailid='$email'");
 		
 		//$db->debug();
 
@@ -73,7 +73,10 @@ if(isset($_POST['add_sub_domain'])){
 			if(($username_db!='') && ($password_db!='')){
 			$trial = SubDomainCreate($subdomain,$username_db,$password_db);	
 
-			$insert = $db->query("INSERT INTO qzbm_clients_subdomains VALUES ('','$name','$username','$password','$subdomain','$email','$today','1','','')");
+			$insert = $dbqzbmc->query("INSERT INTO qzbm_clients_subdomains VALUES ('','$name','$username','$password','$subdomain','$email','$today','1','','')");
+
+$clid=$dbqzbmc->insert_id;
+
 			if($insert){
 
 
@@ -315,9 +318,9 @@ $msg = $subdomain.'.bookman.in';
 
 //echo $html;
 
-        MandrillEmail($fromemail, $subject, $replytoemail,$fromname, json_encode($html), $attachmentarray, $emailarray, $subaccount);
+        MandrillEmail($fromemail, $subject, $replytoemail,$fromname, json_encode($html), $attachmentarray, $emailarray, $subaccount,$clid);
   
-        MandrillEmail($fromemail, $subject, $replytoemail,$fromname, json_encode($html), $attachmentarray, $emailarray1, $subaccount);
+        MandrillEmail($fromemail, $subject, $replytoemail,$fromname, json_encode($html), $attachmentarray, $emailarray1, $subaccount,$clid);
   
 
 

@@ -16,7 +16,7 @@
                             <a href="index.html" class="active"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
                         </li>
                         
-                        <li><a href="index.php?folder=superadmin&file=view"><i class="fa fa-users"></i> Customers<span class="fa arrow"></span></a></li>
+                        <li><a href="index.php?folder=customers&file=view"><i class="fa fa-users"></i> Customers<span class="fa arrow"></span></a></li>
                         
 
                         

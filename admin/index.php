@@ -24,7 +24,7 @@ if(isset($_GET['folder']))
 }
 else
 {
-	$folder='superadmin';
+	$folder='customers';
 }
 
 //include('includes/Get_table_view.php');
