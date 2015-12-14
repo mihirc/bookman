@@ -9,7 +9,7 @@
 
 								<?php
 							
-$clients=$dbqzbmc->get_results("SELECT * FROM qzbm_clients_subdomains");
+$clients=$dbqzbmc->get_results("SELECT * FROM qzbm_clients_subdomains WHERE qzbmc_status != '2'");
 
 
 if($clients)
