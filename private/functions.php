@@ -94,7 +94,7 @@ require_once ('resources/Mandrill.php');
 
 require_once("conn.php");
 
-global $db;
+global $dbqzbmc;
 
 
 $status=$result[0]['status'];
