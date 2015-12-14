@@ -11,10 +11,12 @@ if(isset($_POST['sendemail']))
 
 $message=$_POST['email_text'];
 
+$subject=$_POST['subject'];
+
 
 $clid=$_GET['cl_id'];
 
-$clemailquery=$db->get_row("SELECT * FROM qzbm_clients_subdomains WHERE qzmbc_id='$clid'");
+$clemailquery=$dbqzbmc->get_row("SELECT * FROM qzbm_clients_subdomains WHERE qzmbc_id='$clid'");
 
 if($clemailquery)
 {
@@ -25,13 +27,13 @@ $clemail=$clemailquery->qzbmc_emailid;
 
 //echo "email=".$clemail;
 
-$content = getTemplate('../private/resources/emaildesign/signup.php', 'msg', 'name', 'uname', 'pwd');
+$content = getTemplate('../private/resources/emaildesign/signup3.php', 'msg', $clemailquery->qzbmc_name, $message, '');
 
 $emailarray = json_encode(array(array('name'=>'Amit Borgaonkar','email'=>$clemail,'type'=>'to')));
 
 $html = $content;
-        $subject = "Welcome to BookMan";
-        $message= "";
+        //$subject = "Welcome to BookMan";
+        //$message= "";
         $subaccount = "globenbeyond";
         $fromemail="noreply@bookman.in ";
         $replytoemail="amit@thoughtfulviewfinder.in";

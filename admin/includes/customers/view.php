@@ -2,11 +2,14 @@
 							
 							<div class="col-lg-12">
 							 <div class="box box-primary">
+							 	<div class="page-header">
+							 	<a href="?folder=customers&file=emailcron" class="btn btn-primary"><i class="fa fa-refresh"> </i> Update E-mails</a>
+							 </div>
 							<div class="box-body">
 
 								<?php
 							
-$clients=$db->get_results("SELECT * FROM qzbm_clients_subdomains");
+$clients=$dbqzbmc->get_results("SELECT * FROM qzbm_clients_subdomains");
 
 
 if($clients)
@@ -35,7 +38,9 @@ foreach($clients as $cl)
 <td><?php echo $cl->qzbmc_subdomain;?></td>
 <td><?php echo $cl->qzbmc_emailid;?></td>
 <td><?php echo $cl->qzmbc_datejoined;?></td>
-<td><a href="?folder=superadmin&file=sendemail&cl_id=<?php echo $cl->qzmbc_id;?>" class="btn btn-primary"><i class="fa fa-envelope"></a></td>
+<td><a href="?folder=customers&file=sendemail&cl_id=<?php echo $cl->qzmbc_id;?>" class="btn btn-primary" Title="Send Mail"><i class="fa fa-envelope"></i></a>
+	
+	<a href="?folder=customers&file=emailhistory&cl_id=<?php echo $cl->qzmbc_id;?>" class="btn btn-primary" Title="E-mail History"><i class="fa fa-history"></i></a></td>
 </tr>
 
 
