@@ -100,8 +100,17 @@ $string = json_encode($array);
 
 $content='$string='."'".$string."';
 
-?>";
+
+
+";
 fwrite($myfile, $content);
+
+$content='$version=2;
+
+?>';
+
+fwrite($myfile, $content);
+
 
 fclose($myfile);
 

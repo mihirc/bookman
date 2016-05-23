@@ -21,7 +21,7 @@ function getTemplate($file, $msg=null, $name=null, $username=null, $password=nul
 
 }
 /////
-function MandrillEmail($fromemail, $subject, $replyto,$fromname, $message, $attachmentarray, $emailarray, $subaccount,$clid){
+function MandrillEmail($fromemail, $subject, $replyto,$fromname, $message, $attachment, $emailarray, $subaccount,$clid){
 	
 	$messagetext = json_decode($message);
 	
@@ -52,6 +52,9 @@ function MandrillEmail($fromemail, $subject, $replyto,$fromname, $message, $atta
         'return_path_domain' => null,
         'merge' => true,
         'merge_language' => 'mailchimp',
+
+        
+            
         
     );
     $async = false;
@@ -85,6 +88,73 @@ storeemail($result,$clid);
 	
 }
 
+////
+function MandrillEmail1($fromemail, $subject, $replyto,$fromname, $message, $attachment_encoded, $emailarray, $subaccount,$clid){
+    
+    $messagetext = json_decode($message);
+    
+    require_once ('resources/Mandrill.php');
+    $mandrill = new Mandrill('2_9hFayIJLuag-YEnJVdYQ');
+    
+    try {
+    $message = array(
+        'html' => $messagetext,
+        'text' => $messagetext,
+        'subject' => $subject,
+        'from_email' => $fromemail,
+        'from_name' => $fromname,
+        'to' => json_decode($emailarray),
+        'headers' => array('Reply-To' => $replyto),
+        'important' => 1,
+        'track_opens' => 1,
+        'track_clicks' => 1,
+        'auto_text' => null,
+        'auto_html' => null,
+        'inline_css' => 1,
+        'url_strip_qs' => 1,
+        'preserve_recipients' => null,
+        'view_content_link' => null,
+        'tracking_domain' => null,
+        'subaccount' => $subaccount,
+        'signing_domain' => 'pravas-soft.com',
+        'return_path_domain' => null,
+        'merge' => true,
+        'merge_language' => 'mailchimp',
+
+        "attachments" => array(
+        array(
+            'content' => $attachment_encoded,
+            'type' => "application/pdf",
+            'name' => 'file.pdf',
+        ))
+            
+        
+    );
+    $async = false;
+    $ip_pool = 'Main Pool';
+  
+
+
+
+
+
+
+    $result = $mandrill->messages->send($message, $async, $ip_pool, $send_at=null);
+
+
+
+
+   
+
+
+} catch(Mandrill_Error $e) {
+    echo 'A mandrill error occurred: ' . get_class($e) . ' - ' . $e->getMessage();
+    throw $e;
+}
+    
+    
+}
+////
 
 function storeemail($result,$clid)
 {
