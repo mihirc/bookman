@@ -12,7 +12,7 @@ $today = date("Y-m-d");
 if(isset($_POST['add_sub_domain'])){
 
 
-//print_r($db);
+print_r($db);
 
 	$error = '';
 
