@@ -307,30 +307,50 @@ $create=$newdb->query($firstquery);
 
 }
 
-$emailarray = json_encode(array(array('name'=>$name,'email'=>$email,'type'=>'to')));
-$emailarray1 = json_encode(array(array('name'=>'Mihir Chhatre','email'=>'mihir@thoughtfulviewfinder.in','type'=>'to')));
-$msg = $subdomain.'.bookman.in';
+// $emailarray = json_encode(array(array('name'=>$name,'email'=>$email,'type'=>'to')));
+// $emailarray1 = json_encode(array(array('name'=>'Mihir Chhatre','email'=>'mihir@thoughtfulviewfinder.in','type'=>'to')));
+// $msg = $subdomain.'.bookman.in';
 
-			$success = 'Your Account was successfully created. Please visit <a href="http://'.$subdomain.'.bookman.in">your new domain</a> to start using BookMan. <br /> Also, check your inbox. We have sent you an email with additional details.';
+// 			$success = 'Your Account was successfully created. Please visit <a href="http://'.$subdomain.'.bookman.in">your new domain</a> to start using BookMan. <br /> Also, check your inbox. We have sent you an email with additional details.';
 			
 
-      $content = getTemplate('private/resources/emaildesign/signup.php', $msg, $name, $username, $textpassword);
+//       $content = getTemplate('private/resources/emaildesign/signup.php', $msg, $name, $username, $textpassword);
 
-        $html = $content;
-        $subject = "Welcome to BookMan";
-        $message= "";
-        $subaccount = "globenbeyond";
-        $fromemail="noreply@bookman.in";
-        $replytoemail="noreply@bookman.in";
-        $fromname="BookMan";
-        $attachmentarray=null;
+//         $html = $content;
+//         $subject = "Welcome to BookMan";
+//         $message= "";
+//         $subaccount = "globenbeyond";
+//         $fromemail="noreply@bookman.in";
+//         $replytoemail="noreply@bookman.in";
+//         $fromname="BookMan";
+//         $attachmentarray=null;
 
-//echo $html;
 
-        MandrillEmail($fromemail, $subject, $replytoemail,$fromname, json_encode($html), $attachmentarray, $emailarray, $subaccount,$clid);
+
+//         MandrillEmail($fromemail, $subject, $replytoemail,$fromname, json_encode($html), $attachmentarray, $emailarray, $subaccount,$clid);
   
-        MandrillEmail($fromemail, $subject, $replytoemail,$fromname, json_encode($html), $attachmentarray, $emailarray1, $subaccount,$clid);
+//         MandrillEmail($fromemail, $subject, $replytoemail,$fromname, json_encode($html), $attachmentarray, $emailarray1, $subaccount,$clid);
   
+
+
+require 'private/resources/sendgrid/vendor/autoload.php'; 
+$sendgrid = new SendGrid('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');
+$email = new SendGrid\Email();
+$email
+    ->addTo('amit@thoughtfulviewfinder.in')
+    ->setFrom('info@thoughtfulviewfinder.tk', 'Thoughtfulviewfinder Services')
+    ->setSubject('Subject goes here')
+    ->setText('Hello World!')
+    ->addUniqueArg("foliage_message_id", "22")
+    ->addUniqueArg("foliage_customer_id", "22")
+    ->setHtml('<strong>Hello World!</strong>');
+
+$response=$sendgrid->send($email);
+
+
+
+
+
 
 
 
