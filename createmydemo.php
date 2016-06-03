@@ -12,7 +12,7 @@ $today = date("Y-m-d");
 if(isset($_POST['add_sub_domain'])){
 
 
-print_r($db);
+//print_r($dbqzbmc);
 
 	$error = '';
 
@@ -307,11 +307,13 @@ $create=$newdb->query($firstquery);
 
 }
 
+$success = 'Your Account was successfully created. Please visit <a href="http://'.$subdomain.'.bookman.in">your new domain</a> to start using BookMan. <br /> Also, check your inbox. We have sent you an email with additional details.';
+
 // $emailarray = json_encode(array(array('name'=>$name,'email'=>$email,'type'=>'to')));
 // $emailarray1 = json_encode(array(array('name'=>'Mihir Chhatre','email'=>'mihir@thoughtfulviewfinder.in','type'=>'to')));
 // $msg = $subdomain.'.bookman.in';
 
-// 			$success = 'Your Account was successfully created. Please visit <a href="http://'.$subdomain.'.bookman.in">your new domain</a> to start using BookMan. <br /> Also, check your inbox. We have sent you an email with additional details.';
+// 			
 			
 
 //       $content = getTemplate('private/resources/emaildesign/signup.php', $msg, $name, $username, $textpassword);
