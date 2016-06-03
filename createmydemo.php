@@ -312,12 +312,12 @@ $success = 'Your Account was successfully created. Please visit <a href="http://
 
 // $emailarray = json_encode(array(array('name'=>$name,'email'=>$email,'type'=>'to')));
 // $emailarray1 = json_encode(array(array('name'=>'Mihir Chhatre','email'=>'mihir@thoughtfulviewfinder.in','type'=>'to')));
-// $msg = $subdomain.'.bookman.in';
+ $msg = $subdomain.'.bookman.in';
 
 // 			
 			
 
-//       $content = getTemplate('private/resources/emaildesign/signup.php', $msg, $name, $username, $textpassword);
+       $content = getTemplate('private/resources/emaildesign/signup.php', $msg, $name, $username, $textpassword);
 
 //         $html = $content;
 //         $subject = "Welcome to BookMan";
@@ -346,7 +346,7 @@ $email
     ->setText('Hello World!')
     ->addUniqueArg("foliage_message_id", "22")
     ->addUniqueArg("foliage_customer_id", "22")
-    ->setHtml('<strong>Hello World!</strong>');
+    ->setHtml($content);
 
 $response=$sendgrid->send($email);
 
