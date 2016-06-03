@@ -129,6 +129,7 @@ $queries = array( "CREATE TABLE IF NOT EXISTS `admin` (
   `ad_password` text NOT NULL,
   `ad_usertype` text NOT NULL,
   `ad_status` text NOT NULL,
+  `ad_flag` text NOT NULL,
   PRIMARY KEY (`ad_id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;",
 
@@ -287,7 +288,7 @@ $queries = array( "CREATE TABLE IF NOT EXISTS `admin` (
 ) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 ",
 
-"INSERT INTO admin VALUES ('','$name','$email','$username','$password','1','1')",
+"INSERT INTO admin VALUES ('','$name','$email','$username','$password','1','1','0')",
 
 
 
