@@ -340,7 +340,7 @@ require 'private/resources/sendgrid/vendor/autoload.php';
 $sendgrid = new SendGrid('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');
 $email = new SendGrid\Email();
 $email
-    ->addTo($email)
+    ->addTo('amit@thoughtfulviewfinder.in')
     ->setFrom('info@thoughtfulviewfinder.tk', 'Thoughtfulviewfinder Services')
     ->setSubject('Welcome to Bookman')
     ->setText('Hello World!')
