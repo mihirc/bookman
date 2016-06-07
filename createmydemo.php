@@ -26,6 +26,8 @@ if(isset($_POST['add_sub_domain'])){
 	$subdomain = strtolower(filter_var($_POST['subdomain'],FILTER_SANITIZE_STRING));
 	$email = filter_var($_POST['email'],FILTER_SANITIZE_EMAIL);
 
+  $mailid = filter_var($_POST['email'],FILTER_SANITIZE_EMAIL);
+
 	//VALIDATION
 	if($username == ""){
 		$error .= "Please enter a valid username<br />";
@@ -340,7 +342,7 @@ require 'private/resources/sendgrid/vendor/autoload.php';
 $sendgrid = new SendGrid('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');
 $email = new SendGrid\Email();
 $email
-    ->addTo('amit@thoughtfulviewfinder.in')
+    ->addTo($mailid)
     ->setFrom('info@thoughtfulviewfinder.tk', 'Thoughtfulviewfinder Services')
     ->setSubject('Welcome to Bookman')
     ->setText('Hello World!')
