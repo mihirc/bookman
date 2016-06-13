@@ -361,12 +361,12 @@ $queries = array( "CREATE TABLE IF NOT EXISTS `admin` (
 
 
 
-"INSERT INTO member_sms VALUES ('','','100','$date','1','')"
+"INSERT INTO member_sms VALUES ('','','100','$date','1','')",
 
 
 
 
-"INSERT INTO template VALUES ('5','Invoice','$temp')";
+"INSERT INTO template VALUES ('5','Invoice','$temp')"
 
 
 
