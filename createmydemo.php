@@ -297,6 +297,71 @@ $queries = array( "CREATE TABLE IF NOT EXISTS `admin` (
 "INSERT INTO member_sms VALUES ('','','100','$date','1','')"
 
 
+$temp='<table style="width: 100%; border-bottom: 1px solid grey;" border="0">
+<tbody>
+<tr>
+<td>[company_address]</td>
+<td align="right">[company_logo]</td>
+</tr>
+</tbody>
+</table>
+<p><font size="4"><strong>Batch Detail</strong></font></p>
+<table style="width: 1011px; height: 55px;" border="1">
+<tbody>
+<tr>
+<td style="background-color: #4f5b61;" align="left"><font color="#FFFFFF">Camp Date</font></td>
+<td><strong>[start_date]</strong> To<strong> [end_date]</strong> - Time<strong> [start_time]</strong> -<strong> [end_time]</strong></td>
+</tr>
+<tr>
+<td style="background-color: #4f5b61;" align="left"><font color="#FFFFFF">Catgory</font></td>
+<td><strong>[category_name]</strong></td>
+</tr>
+</tbody>
+</table>
+<p><font size="4"><strong>Member Detail</strong></font></p>
+<table style="border: 1px solid #c4c4c4; width: 100%;" border="1">
+<tbody>
+<tr>
+<td style="background-color: #4f5b61;" align="left"><font color="#FFFFFF">Name</font></td>
+<td>[name]</td>
+</tr>
+<tr>
+<td style="background-color: #4f5b61;" align="left"><font color="#FFFFFF">Email</font></td>
+<td>[email]</td>
+</tr>
+<tr>
+<td style="background-color: #4f5b61;" align="left"><font color="#FFFFFF">Contact No</font></td>
+<td align="left">[contact_no]</td>
+</tr>
+</tbody>
+</table>
+<p><font size="4"><strong><br />&nbsp;</strong></font></p>
+<p><font size="4"><strong>Payment History</strong></font></p>
+<table style="width: 100%;" border="1">
+<tbody>
+<tr style="background-color: #4f5b61;">
+<td><font color="#FFFFFF">Date</font></td>
+<td><font color="#FFFFFF">Method</font></td>
+<td><font color="#FFFFFF">Amount</font></td>
+</tr>
+<tr>
+<td colspan="3">[payment_history]</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<table style="width: 100%;" border="0">
+<tbody>
+<tr>
+<td align="left">[company_name]</td>
+<td><br /><br /></td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<p>&nbsp;</p>';
+
+"INSERT INTO template VALUES ('5','Invoice','$temp')";
 
 
 
